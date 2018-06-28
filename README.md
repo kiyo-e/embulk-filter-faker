@@ -8,17 +8,17 @@ TODO: Write short description here and embulk-filter-faker.gemspec file.
 
 ## Configuration
 
-- **option1**: description (integer, required)
-- **option2**: description (string, default: `"myvalue"`)
-- **option3**: description (string, default: `null`)
+- **columns**: description (Array, required)
 
 ## Example
 
 ```yaml
 filters:
   - type: faker
-    option1: example1
-    option2: example2
+    columns:
+      - {name: name}
+      - {email: email}
+      - {tel: tel}
 ```
 
 
