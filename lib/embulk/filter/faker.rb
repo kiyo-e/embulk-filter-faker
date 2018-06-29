@@ -1,11 +1,12 @@
-require "faker"
-Faker::Config.locale = :ja
-
 module Embulk
   module Filter
 
     class Faker < FilterPlugin
+      require "faker"
+      
       Plugin.register_filter("faker", self)
+      Faker::Config.locale = :ja
+
 
       def self.transaction(config, in_schema, &control)
         task = {
