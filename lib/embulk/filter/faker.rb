@@ -25,7 +25,9 @@ module Embulk
       def add(page)
         # filtering code:
         page.each do |record|
-          page_builder.add set_value(record)
+          p record
+          p v = set_value(record)
+          page_builder.add v
         end
       end
 
@@ -56,7 +58,7 @@ module Embulk
       def make_dummy_data(type)
         case type.to_sym
         when :name
-          p FFaker::NameJA.unique.name
+          FFaker::NameJA.unique.name
         when :email
           FFaker::Internet.unique.email
         when :tel
