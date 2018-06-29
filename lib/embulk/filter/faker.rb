@@ -40,8 +40,9 @@ module Embulk
           c.each_pair do |k, v|
             i = find_index(k)
             next unless i
+            next if record[i].nil? || record[i] == ""
 
-            record[i] = make_dummy_data(v)
+            record[i] = make_dummy_data(v) 
           end
         end
 
@@ -55,7 +56,7 @@ module Embulk
       def make_dummy_data(type)
         case type.to_sym
         when :name
-          FFaker::NameJA.unique.name
+          p FFaker::NameJA.unique.name
         when :email
           FFaker::Internet.unique.email
         when :tel
