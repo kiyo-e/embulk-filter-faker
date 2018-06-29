@@ -1,5 +1,5 @@
 require "faker"
-Faker::Config.locale = :ja
+::Faker::Config.locale = :ja
 
 module Embulk
   module Filter
