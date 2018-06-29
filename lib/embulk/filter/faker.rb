@@ -25,9 +25,7 @@ module Embulk
       def add(page)
         # filtering code:
         page.each do |record|
-          p record
-          p v = set_value(record)
-          page_builder.add v
+          page_builder.add set_value(record)
         end
       end
 
