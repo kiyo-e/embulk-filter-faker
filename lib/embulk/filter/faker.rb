@@ -53,14 +53,13 @@ module Embulk
       end
 
       def make_dummy_data(type)
-          FFaker::Config.locale = :ja
         case type.to_sym
         when :name
-          FFaker::Name.unique.name
+          FFaker::NameJA.unique.name
         when :email
           Faker::Internet.unique.email
         when :tel
-          Faker::PhoneNumber.unique.phone_number
+          FFaker.numerify "#{['0####-#-####', '0###-##-####', '0##-###-####', '0#-####-####'].sample}"
         else
           # none
         end
