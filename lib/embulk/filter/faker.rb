@@ -57,7 +57,7 @@ module Embulk
         when :name
           FFaker::NameJA.unique.name
         when :email
-          Faker::Internet.unique.email
+          FFaker::Internet.unique.email
         when :tel
           FFaker.numerify "#{['0####-#-####', '0###-##-####', '0##-###-####', '0#-####-####'].sample}"
         else
