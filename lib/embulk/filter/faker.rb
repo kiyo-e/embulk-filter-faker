@@ -1,4 +1,4 @@
-require "faker"
+require "ffaker"
 
 module Embulk
   module Filter
@@ -53,14 +53,14 @@ module Embulk
       end
 
       def make_dummy_data(type)
-          ::Faker::Config.locale = :ja
+          FFaker::Config.locale = :ja
         case type.to_sym
         when :name
-          ::Faker::Name.unique.name
+          FFaker::Name.unique.name
         when :email
-          ::Faker::Internet.unique.email
+          Faker::Internet.unique.email
         when :tel
-          ::Faker::PhoneNumber.unique.phone_number
+          Faker::PhoneNumber.unique.phone_number
         else
           # none
         end
