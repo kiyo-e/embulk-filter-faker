@@ -1,7 +1,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "embulk-filter-faker"
-  spec.version       = "0.1.0"
+  spec.version       = "0.1.1"
   spec.authors       = ["kiyo-e"]
   spec.summary       = "Faker filter plugin for Embulk"
   spec.description   = "Faker"
