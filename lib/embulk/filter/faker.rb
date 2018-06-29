@@ -6,7 +6,6 @@ module Embulk
     class Faker < FilterPlugin
       
       Plugin.register_filter("faker", self)
-      ::Faker::Config.locale = :ja
 
       def self.transaction(config, in_schema, &control)
         task = {
@@ -54,6 +53,7 @@ module Embulk
       end
 
       def make_dummy_data(type)
+          ::Faker::Config.locale = :ja
         case type.to_sym
         when :name
           ::Faker::Name.unique.name
